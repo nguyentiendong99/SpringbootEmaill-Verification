@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <a href="/register">Create New Customer</a>
+    <hr>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Full Name</th>
+            <th>Phone Number</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Postal Code</th>
+            <th>Created Time</th>
+            <th>Enabled </th>
+            <th>Verification</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${customer}">
+            <td th:text="${item.id}"></td>
+            <td th:text="${item.email}"></td>
+            <td th:text="${item.password}"></td>
+            <td th:text="${item.fullName}"></td>
+            <td th:text="${item.phoneNumber}"></td>
+            <td th:text="${item.addressLine1}"></td>
+            <td th:text="${item.addressLine2}"></td>
+            <td th:text="${item.city}"></td>
+            <td th:text="${item.state}"></td>
+            <td th:text="${item.postalCode}"></td>
+            <td th:text="${item.createdTime}"></td>
+            <td th:text="${item.enabled}"></td>
+            <td th:text="${item.verification}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
